@@ -49,6 +49,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <Button
+        android:id="@+id/token_btn"
+        android:layout_marginTop="16dp"
+        android:text="获取token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 
 
 </LinearLayout>

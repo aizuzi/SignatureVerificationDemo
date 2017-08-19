@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
   protected TextView appSignaturesTv;
   protected TextView jniSignaturesTv;
   protected Button checkBtn;
+  protected Button tokenBtn;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +49,23 @@ public class MainActivity extends AppCompatActivity {
     }
   };
 
+  private View.OnClickListener tokenClickListener = new View.OnClickListener(){
+    @Override
+    public void onClick(View v) {
+      String result = getToken(MainActivity.this,"12345");
+
+      Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG).show();
+    }
+  };
+
   private void initView() {
     appSignaturesTv = (TextView) findViewById(R.id.app_signatures_tv);
     jniSignaturesTv = (TextView) findViewById(R.id.jni_signatures_tv);
     checkBtn = (Button) findViewById(R.id.check_btn);
+    tokenBtn = (Button) findViewById(R.id.token_btn);
 
     checkBtn.setOnClickListener(clickListener);
+    tokenBtn.setOnClickListener(tokenClickListener);
   }
 
   /**
@@ -62,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
    */
   public native String getSignaturesSha1(Context context);
   public native boolean checkSha1(Context context);
+  public native String getToken(Context context,String userId);
+
 
   public String getSha1Value(Context context) {
     try {
