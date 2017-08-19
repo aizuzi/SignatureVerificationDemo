@@ -7,7 +7,7 @@
 #define LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,TAG,__VA_ARGS__)
 
 //签名信息
-const char *app_sha1="81BA0CF9134C6415F34C3BCC854913A53C71413C";
+const char *app_sha1="81BA0CF9134C6415F34C3BCC854913A53C71415E";
 const char hexcode[] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
 
 char* getSha1(JNIEnv *env, jobject context_object){

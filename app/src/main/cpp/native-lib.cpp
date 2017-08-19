@@ -24,4 +24,3 @@ jboolean result = checkValidity(env,sha1);
 
 return result;
 }
-
